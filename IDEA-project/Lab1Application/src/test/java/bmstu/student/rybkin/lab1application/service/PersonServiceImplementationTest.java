@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -88,15 +87,6 @@ class PersonServiceImplementationTest {
         Integer age = ((request.getAge() == null) ? saved.getAge() : request.getAge());
         String address = ((request.getAddress() == null) ? saved.getAddress() : request.getAddress());
         String work = ((request.getWork() == null) ? saved.getWork() : request.getWork());
-        System.out.println(request.getName());
-        System.out.println(request.getAge());
-        System.out.println(request.getAddress());
-        System.out.println(request.getWork());
-        System.out.println("---------------------");
-        System.out.println(name);
-        System.out.println(age);
-        System.out.println(address);
-        System.out.println(work);
         PersonResponse expectedResponse = new PersonResponse(saved.getId(), name, age, address, work);
         PersonResponse receivedResponse = personService.patchPerson(saved.getId(), request);
         assertEquals(expectedResponse, receivedResponse);

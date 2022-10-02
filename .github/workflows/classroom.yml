@@ -16,6 +16,17 @@ jobs:
           fetch-depth: 0
 
       # TODO build, test and deploy project
+      
+      - name: Setup JDK 18
+        uses: actions/setup-java@1
+        with:
+            java-version: '18'
+            
+      - name: Maven Run Unit Tests
+        run: mvn surefire:test
+        
+      - name: Maven Package
+        run: mvn -B clean package
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master

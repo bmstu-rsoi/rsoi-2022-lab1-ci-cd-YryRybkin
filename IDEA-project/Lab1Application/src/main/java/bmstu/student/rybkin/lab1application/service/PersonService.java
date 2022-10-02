@@ -2,7 +2,6 @@ package bmstu.student.rybkin.lab1application.service;
 
 import bmstu.student.rybkin.lab1application.models.PersonRequest;
 import bmstu.student.rybkin.lab1application.models.PersonResponse;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
