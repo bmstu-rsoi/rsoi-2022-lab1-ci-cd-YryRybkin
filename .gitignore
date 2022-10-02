@@ -1303,4 +1303,5 @@ build/
 ### VS Code ###
 .vscode/
 
+IDEA-project/
 IDEA-project/**
