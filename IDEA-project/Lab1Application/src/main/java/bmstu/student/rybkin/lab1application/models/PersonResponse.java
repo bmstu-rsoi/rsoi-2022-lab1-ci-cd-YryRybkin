@@ -45,10 +45,21 @@ public class PersonResponse {
     public PersonResponse(long id, String name, Integer age, String address, String work) {
 
         this.id = id;
-        this.name = Objects.requireNonNull(name);
+        this.name = name;
         this.age = age;
         this.address = address;
         this.work = work;
+
+    }
+
+    public PersonResponse(Person person)
+    {
+
+        this.id = person.getId();
+        this.name = person.getName();
+        this.age = person.getAge();
+        this.address = person.getAddress();
+        this.work = person.getWork();
 
     }
 

@@ -1,5 +1,7 @@
 package bmstu.student.rybkin.lab1application.models;
 
+import bmstu.student.rybkin.lab1application.jpa.Person;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -46,6 +48,15 @@ public class PersonRequest {
         this.age = age;
         this.address = address;
         this.work = work;
+
+    }
+
+    public PersonRequest(Person person) {
+
+        this.name = person.getName();
+        this.age = person.getAge();
+        this.address = person.getAddress();
+        this.work = person.getWork();
 
     }
 
