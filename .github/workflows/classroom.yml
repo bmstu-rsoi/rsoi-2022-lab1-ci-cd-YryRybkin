@@ -27,13 +27,12 @@ jobs:
         run: mvn -B clean package
         
       - name: Deploy to Heroku
-        uses: jctaveras/heroku-deploy@v3.1.0
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
-            email: gyurarybkin@gmail.com
-            api_key: bf7a8ee8-da09-49e6-a350-4d95e674e44c
-            app_name: rsoi-lab1-yryrybkin
-            dockerfile_path: '.'
-            process_type: 'web'
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+            heroku_email: ${{secrets.HEROKU_EMAIL}}
+            usedocker: true
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
