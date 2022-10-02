@@ -33,6 +33,7 @@ jobs:
             heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
             heroku_email: ${{secrets.HEROKU_EMAIL}}
             usedocker: true
+            dontuseforce: false
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
