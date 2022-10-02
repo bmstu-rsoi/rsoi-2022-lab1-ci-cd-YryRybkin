@@ -23,7 +23,7 @@ jobs:
             java-version: '18'
             
       - name: Maven Run Unit Tests
-        run: mvn surefire:test
+        run: mvn -B test
         
       - name: Maven Package
         run: mvn -B clean package
